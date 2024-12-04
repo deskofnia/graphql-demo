@@ -23,18 +23,23 @@ function DisplayTodos() {
 
   return <div style={{ flexDirection: "row", justifyItems: "center", alignItems: "center" }}>
     <table style={{ borderCollapse: "collapse", textAlign: "center", width: "80%" }}>
-      <tr>
-        <th>Id</th>
-        <th>Todo Name</th>
-        <th>User Email</th>
-      </tr>
-      {data.getTodos.map(({ id, title, user }: any) => (
-        <tr key={id}>
-          <td>{id}</td>
-          <td>{title}</td>
-          <td>{user?.email}</td>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Todo Name</th>
+          <th>User Email</th>
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {data.getTodos.map(({ id, title, user }: any) => (
+          <tr key={id}>
+            <td>{id}</td>
+            <td>{title}</td>
+
+            <td>{user?.email}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   </div>
 }
