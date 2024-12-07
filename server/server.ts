@@ -65,6 +65,9 @@ app.use(
   })
 );
 
-app.listen(4000);
+app.get("/health-check", () =>  console.log("Hello there..."));
+
+
+app.listen(4000, () =>  console.log("Running at port 4000"));
 
 console.log("GraphQL API server available at http://localhost:4000/graphql");
